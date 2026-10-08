@@ -13,6 +13,7 @@
     .bar label { display: flex; gap: 8px; align-items: center; font-weight: 400; font-size: 14px; }
     .bar label input { width: auto; }
     .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; letter-spacing: .5px; }
+    td.mono, td.nowrap { white-space: nowrap; }
     td .secondary { padding: 7px 12px; font-size: 13px; }
     td .danger { background: var(--bad); color: #fff; border: 0; padding: 7px 12px; font-size: 13px; }
     .pill.active { background: var(--accent-soft); color: var(--ok); }
@@ -162,7 +163,7 @@
         action.append(btn);
       }
       tr.append(cell(f.name), cell(f.friend_id, 'mono'), cell(String(f.weekly_pages), 'num'),
-        cell(f.status === 'active' ? String(f.pages_this_week) : '–', 'num'), cell(until(f.expires_at)), status, action);
+        cell(f.status === 'active' ? String(f.pages_this_week) : '–', 'num'), cell(until(f.expires_at), 'nowrap'), status, action);
       return tr;
     }));
     $('friends-empty').hidden = shown.length > 0;
