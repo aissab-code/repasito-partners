@@ -65,8 +65,7 @@
             <select id="pages" name="pages">
               <option value="40">40</option>
               <option value="100" selected>100</option>
-              <option value="200">200</option>
-              <option value="400">400 (same as Plus)</option>
+              <option value="200">200 (same as Plus)</option>
             </select>
           </label>
           <label>For
@@ -194,7 +193,7 @@
     confirming = null;
     try {
       await rpc('admin_friend_remove', { p_key: adminKey, p_grant_id: f.id });
-      say($('grant-msg'), `${f.name} is back to the free 20 pages a week.`);
+      say($('grant-msg'), `${f.name} is back to the free 10 pages a week.`);
       await load();
     } catch (e) {
       say($('grant-msg'), e.message, true);
